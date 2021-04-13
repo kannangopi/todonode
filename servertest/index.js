@@ -34,6 +34,12 @@ app.post("/api/insert",(req,res)=>{
         res.send(result);
     })
 })
+app.post("/api/disp",(req,res)=>{
+const sqlselect = "SELECT task FROM dolist;";
+db.query(sqlselect,(err,result)=>{
+    res.send(result);
+})
+})
 
 app.listen(3011,()=>{
     console.log("server running");
